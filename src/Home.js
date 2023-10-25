@@ -45,7 +45,7 @@ function Home() {
     <Header />
      <section className='home'>
       
-      
+
      <input type='text'  placeholder='SEARCH HERE.....' value={search} onChange={handle} className='searchbar'></input>
      <button className='btn' onClick={handle}>Search</button>
       <div>
