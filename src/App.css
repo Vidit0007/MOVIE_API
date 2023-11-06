@@ -20,21 +20,22 @@
     border-radius: 20px;
     padding-left: 5px;
   }
-  /* .dashboard{
-    background-image: url('./image/dash.jpg'); 
+  .dashboard{
+    background-image: url('./IMAGES/image.png'); 
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center; 
     height:100vh;
     width: auto;
     
-  } */
+  }
   /* .dash{
     margin-left: 90%;
     text-decoration: none;
   } */
-  .home{
-    background-image: url('./IMAGES/image.png'); 
+  
+  .about{
+    background-image: url('./IMAGES/About\ us.jpg'); 
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center; 
@@ -42,24 +43,15 @@
     width: 100vw;
     text-decoration: none;
   }
-  /* .about{
-    background-image: url('./image/About\ us.jpg'); 
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-position: center; 
-    height:100vh;
-    width: 100vw;
-    text-decoration: none;
-  } */
-  /* .contact{
-    background-image: url('./image/contact.jpg'); 
+  .Contact{
+    background-image: url('./IMAGES/contact.jpg'); 
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center; 
     height:100vh;
     width: 100vw;
    
-  } */
+  }
   /* .profile{
     background-image: url('./image/profile2.jpg'); 
     background-size: cover; 
@@ -79,13 +71,121 @@
   } */
   
   
-  /* .error{
-    background-image: url('./image/error.jpg'); 
+  .error{
+    background-image: url('./IMAGES/error.jpg'); 
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center; 
     height:100vh;
     width: 100vw;
    
-  } */
+  }
+
+  .input {
+    margin-left: 40%;
+    width: 20%;
+    height: 25px;
+    /* border-radius: 15px; */
+    padding-left: 30px;
+    font-family: monospace;
+    border: 2px solid black;
+  }
+  .btn1 {
+    border: 2px solid white;
+    background-color: #2980B9;
+    color: white;
+    padding: 2px;
+    margin-left: 48%;
+    width: 100px;
+    font-size: 1.5em;
+    /* border-radius: 15px; */
+  }
+  .heading {
+    margin-left: 38%;
+    margin-bottom: 10%;
+    font-size: 5em;
+    font-family: sans-serif;
+    color: white;
+    background:linear-gradient(to bottom,rgb(251, 255, 0),rgb(189, 6, 255));
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(14, 6, 246); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 3s case-in-out infinite;
+  
+  }
+  .heading2 {
+    margin-left: 34%;
+    font-size: 5em;
+    font-family: sans-serif;
+    color: white;
+    background:linear-gradient(to bottom,rgb(3, 35, 245),rgb(223, 228, 231));
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(239, 239, 239); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 3s case-in-out infinite;
+  }
+  .heading3 {
+    margin-left: 3%;
+    font-size: 5em;
+    font-family: sans-serif;
+    color: white;
+  text-align: center;
+  justify-content: center;
+  }
+  .container1{
+    background-image: url("./IMAGES/login3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vd;
+    height: 100vh;
+  }
+  .container2{
+    background-image: url("./IMAGES/regi1.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vd;
+    height: 100vh;
+  }
+  .container3{
+    background-image: url("./IMAGES/home.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vd;
+    height: 100vh;
+  }
+ 
+  .btn2 {
+    border: 2px solid white;
+    font-family: monospace;
+    background-color: #2980B9;
+    color: white;
+    padding: 2px;
+    margin-left: 90%;
+    margin-top:5%;
+    width: 90px;
+    font-size: 1.5em;
+  
+    /* border-radius: 15px; */
+  }
+.btn3{
+  
+    border: 2px solid white;
+    font-family: monospace;
+    background-color: #2980B9;
+    color: white;
+    padding: 2px;
+    margin-left: 90%;
+    margin-top: 0%;
+    width: 90px;
+    font-size: 1.5em;
+  
+ 
+}
+
+  
   

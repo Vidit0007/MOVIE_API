@@ -8,7 +8,7 @@ function About() {
       <>
      
       <Header />
-       <section className='home'>
+       <section className='about'>
        
      </section>
      </>

@@ -1,17 +1,15 @@
 import React from 'react'
-import Header from './ASSETS/Header';
-
 import {useNavigate} from 'react-router-dom'
 function Error() {
     const navigate = useNavigate();
     const handle = (()=>{
-        navigate('/')
+        navigate('home')
     })
   return (
     
    <section className='error'>
-    <Header />
-    <button className='eb' onClick={handle}></button>
+    
+    <button style={{marginLeft:"42.5%",marginTop:"44%",backgroundColor:"white", color:"black",height:"50px",width:"15%",fontSize:"2em",border:"none",borderRadius:"10px"}}  onClick={handle}>GO BACK</button>
    </section>
   )
 }

@@ -1,72 +1,69 @@
-import React,{useEffect, useState} from 'react'
-import Header from './ASSETS/Header';
+import React, { useState } from "react";
+import Header from "./ASSETS/Header";
+import "./Home.css";
+import img1 from "./IMAGES/moie-removebg.png";
+import img2 from "./IMAGES/movie2-removebg-preview.png";
 
+const Home = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [movies, setMovies] = useState([]);
+  const key = "3dbdef1dbc3e23fffefc17ca40135e5a";
+  const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${searchQuery}`;
+  const handleSearch = async () => {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      setMovies(data.results);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
-function Home() {
-  const[search,setSearch]= useState('');
-  const[data, setData]= useState(null);
-  const[loading, setLoading]= useState(true);
-  const [error,setError]= useState(null);
- useEffect(()=>{
-  const fetchApi = async ()=>{
-    try{
-      const key='3dbdef1dbc3e23fffefc17ca40135e5a'
-      const url =`https://api.themoviedb.org/3/movie/11?api_key=${key}`
-      const response = await fetch(url)
-      const jasonData = await response.json();
-      if(!response){
-        throw new Error("could not get data");
-     }
-     setLoading(false);
-     setData(jasonData);
-     console.log(jasonData)
-    }
-    catch(error){
-      setError(error);
-      setLoading(false);
-    }
-  }
-  fetchApi();
- },[data])
- const filtered = data.filter((item) =>
-    item.title.toLowerCase().includes(search.title.toLowerCase())
-  );
- 
- const handle = (e)=>{
-    setSearch(e.target.value);
- }
- if(loading){
-  return <div>Loading....</div>
-  }
- 
   return (
     <>
-   
-    <Header />
-     <section className='home'>
-      
+      <section className="home">
+        <Header />
+        <div className="con1">
+        <div><img src={img1} alt="Q" className="img1"></img> 
+            <img src={img2} alt="w" className="img2"></img>
+            </div>
+            <h1 className="h">MOVIES SEARCHING APP</h1>
+        </div>
+        <div>
+          <div className="search-container">
+            <input
+              className="search-container input"
+              type="text"
+              placeholder="Search for a movie"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <button className="search-container button " onClick={handleSearch}>
+              Search
+            </button>
+            <br />
+            <br />
+          </div>
+          <div className="movie-list">
+            {movies.map((movie) => (
+              <div className="movie-card" key={movie.id}>
+                <h2>{movie.title}</h2>
+                <div>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500//${movie.poster_path}`}
+                    alt="imdb"
+                  />
+                </div>
+                <div>
+                  <p>{movie.overview}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
 
-     <input type='text'  placeholder='SEARCH HERE.....' value={search} onChange={handle} className='searchbar'></input>
-     <button className='btn' onClick={handle}>Search</button>
-      <div>
-        <div>
-          <h1>{data.title}</h1>
-        </div>
-        <div>
-          <img src={`https://image.tmdb.org/t/p/w500//${data.poster_Path}`} alt='imdb'></img>
-        </div>
-        <div>
-          <h2>{data?.overview}</h2>
-        </div>
-
-        <div>
-          <h3>{data?.release_date}</h3>
-        </div>
-        
-      </div>
-   </section>
-   </>
-  )
-}
-
-export default Home
+export default Home;

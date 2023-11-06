@@ -1,55 +1,57 @@
+
 import React, { useState } from 'react';
-import Home from './Home'
-const Login = () => {
- 
+import { useNavigate } from 'react-router-dom';
+
+function Login({ onLogin }) {
+  const navi =useNavigate();
+  const handle =()=>{
+    navi('/')
+  }
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
-  const handleLogin = (e) => {
-    e.preventDefault();
 
-  
-    if (username ==='V' && password === 'V') {
-      setLoggedIn(true);
-     
+  const handleLogin = () => {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users.find((u) => u.username === username && u.password === password);
+    if (user) {
+      onLogin();
     } else {
-      setLoggedIn(false);
-      setError('Invalid username or password');
+      alert('Invalid username or password');
     }
   };
 
   return (
-    <div>
-      {loggedIn ? (
-        <p><Home /></p>
-      ) : (
-        <form onSubmit={handleLogin}>
-          <h2>Login Form</h2>
-          {error && <p className="error">{error}</p>}
-          <div>
-            <label htmlFor="username">Username:</label>
-            <input
-              type="text"
-              id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <button type="submit">Login</button>
-        </form>
-      )}
+    <div className='container1'>
+      <br />
+
+      <h1 className='heading2'>LOGIN FORM</h1>
+      <input
+        className='input'
+        type="text"
+        placeholder="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        required
+      />
+
+      <input
+        className='input'
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required
+
+      />
+      <br />
+      <br />
+
+      <button className='btn1' onClick={handleLogin}>Login</button>
+      <br/>
+      <br/>
+      <button className='btn1' onClick={handle}>Register</button>
     </div>
   );
-};
+}
 
 export default Login;
